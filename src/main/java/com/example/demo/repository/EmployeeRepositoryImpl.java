@@ -15,7 +15,7 @@ import java.util.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Repository;	
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -167,23 +167,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepositoryCustom {
             );
             
         }
-//        if(marksRange != null && !marksRange.isBlank()) {
-//        	var marksPath = root.get("education").get("tenthPercentage");
-//        	
-//        	switch(marksRange) {
-//        	case "80-100" ->
-//        		predicates.add(cb.between(marksPath, 80.0, 100.0));
-//        		
-//        	case "60-80" ->
-//            predicates.add(cb.between(marksPath, 60.0, 80.0));
-//
-//        	case "40-60" ->
-//            predicates.add(cb.between(marksPath, 40.0, 60.0));
-//
-//        	case "0-40" ->
-//            predicates.add(cb.lessThan(marksPath, 40.0));
-//        	}
-//        }
         cq.select(root).where(predicates.toArray(new Predicate[0]));
         
         
