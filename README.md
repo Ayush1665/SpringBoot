@@ -36,7 +36,7 @@ spring.application.name=Employee_Detail_Form
 
 # Server
 server.port=${PORT:8080}
-server.servlet.context-path=/abc
+server.servlet.context-path=/api
 
 # Database (Use Environment Variables)
 spring.datasource.url=${DB_URL}
@@ -45,9 +45,9 @@ spring.datasource.password=${DB_PASSWORD}
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 # JPA
-spring.jpa.hibernate.ddl-auto=validate
-spring.jpa.show-sql=false
-spring.jpa.properties.hibernate.format_sql=false
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 
 # Logging
 logging.level.root=INFO
@@ -57,6 +57,12 @@ logging.file.name=logs/application.log
 # Spring Security (Use env variables in production)
 spring.security.user.name=${APP_USERNAME:user}
 spring.security.user.password=${APP_PASSWORD:password}
+
+# Email Configuration
+spring.mail.host=${MAIL_HOST} 
+spring.mail.port=${MAIL_PORT}
+spring.mail.username=${MAIL_USERNAME}
+spring.mail.password=${MAIL_PASSWORD}
 ```
 
 ##  How to Run
