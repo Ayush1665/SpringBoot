@@ -34,6 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setName(dto.name());
         employee.setIsActive(true);
         employee.setDob(dto.dob());
+        employee.setEmail(dto.email()); 
 //        employee.setBloodGroup(dto.bloodGroup());
 
         EducationDetail edu = new EducationDetail();
@@ -174,6 +175,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 e.getId(),
                 e.getName(),
                 e.getDob(),
+                e.getEmail(),
                 new EducationDTO(
                         e.getEducation().getTenthPercentage(),
                         e.getEducation().getTwelvethPercentage(),

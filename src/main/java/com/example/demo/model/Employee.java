@@ -44,6 +44,9 @@ public class Employee {
 	
 	@Column(name = "dob")
 	private LocalDate dob;
+
+	@Column(unique = true, nullable = false)
+	private String email;
 	
 	@CreationTimestamp
 	private LocalDateTime createdAt;
