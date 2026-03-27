@@ -72,3 +72,6 @@ git clone https://github.com/Ayush1665/Employee_Detail_Form.git
 cd Employee_Detail_Form
 mvn spring-boot:run
 ```
+
+##  Preview
+![Preview](.github/assets/)

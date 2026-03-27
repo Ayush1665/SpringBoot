@@ -5,63 +5,209 @@
 <head>
     <title>Employees Form</title>
     <style>
-        /* --- Existing Styles --- */
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h2 { margin-bottom: 10px; }
-        a.add-btn { display: inline-block; margin-bottom: 15px; padding: 8px 14px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 10px; text-align: center; border: 1px solid #ddd; }
-        th { background-color: #f4f4f4; }
-        tr:nth-child(even) { background-color: #fafafa; }
-        .action-btn { padding: 6px 10px; margin: 2px; border: none; border-radius: 4px; color: white; font-size: 13px; cursor: pointer; text-decoration: none; display: inline-block;}
-        .edit-btn { background-color: #2196F3; }
-        .delete-btn { background-color: #f44336; }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-        /* --- NEW MODAL STYLES --- */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto; /* 5% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%; /* Could be more or less, depending on screen size */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        }
+body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1551836022-d5d88e9218df') no-repeat center/cover;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+/* Container */
+.container {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+/* Header */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
 
-        /* Modal Form Styles */
-        .form-group { margin-bottom: 15px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group textarea { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
-        .save-btn { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; }
-        .save-btn:hover { background-color: #45a049; }
-    </style>
+/* Buttons */
+a.add-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #4CAF50, #2ecc71);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+a.add-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th {
+    background: #2c3e50;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr {
+    background-color: #ffffff;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Zebra striping */
+tr:nth-child(even) {
+    background-color: #f4f6f8;
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #e9eef3;
+    transform: scale(1.01);
+}
+
+/* Buttons */
+.action-btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.edit-btn {
+    background: #3498db;
+}
+
+.delete-btn {
+    background: #e74c3c;
+}
+
+/* Search + Sort */
+form {
+    margin-bottom: 15px;
+}
+
+input, select {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76,175,80,0.4);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 25px;
+    width: 45%;
+    border-radius: 10px;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Form inside modal */
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+}
+
+/* Save Button */
+.save-btn {
+    background: linear-gradient(135deg, #4CAF50, #2ecc71);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    padding: 8px 14px;
+    margin: 5px;
+    border-radius: 5px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+}
+
+/* Messages */
+.success {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -76,18 +222,12 @@
       method="get"
       style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
 
-    <label style="font-weight: bold;">Search:</label>
+    <label style="font-weight: bold; color:#ffffff">Search:</label>
 
     <input type="number"
            name="id"
            placeholder="Search by ID"
            value="${param.id}"
-           style="padding: 6px; border-radius: 4px; border: 1px solid #ccc;">
-
-    <input type="text"
-           name="name"
-           placeholder="Search by Name"
-           value="${param.name}"
            style="padding: 6px; border-radius: 4px; border: 1px solid #ccc;">
 
     <button type="submit"
@@ -114,7 +254,7 @@
       action="${pageContext.request.contextPath}/employees"
       style="margin-bottom: 15px; display: inline-flex; align-items: center; gap: 8px;">
 
-    <label for="sortBy" style="font-weight: bold;">
+    <label for="sortBy" style="font-weight: bold; color:#ffffff">
         Sort By:
     </label>
 
@@ -290,7 +430,7 @@
 </c:if>
 
     <!-- Page Number Display -->
-    <span style="margin: 0 10px;">
+    <span style="margin: 0 10px; color:#ffffff">
         Page ${currentPage + 1} of ${totalPages}
     </span>
 
