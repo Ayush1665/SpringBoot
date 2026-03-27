@@ -74,4 +74,15 @@ mvn spring-boot:run
 ```
 
 ##  Preview
-![Preview](.github/assets/)
+
+##### Home Page
+![](https://github.com/user-attachments/assets/73f9995b-f98c-44a3-8ca8-a46109f118f5)
+
+##### Update Employee Details
+![Update Employee Detail](https://github.com/user-attachments/assets/b2a6b146-d9be-4944-bd38-0ad0914d52ae)
+
+##### Create Employee
+![Update Employee Detail](https://github.com/user-attachments/assets/8dd45e9b-cbc6-4252-8515-90f5098bdb7b)
+
+##### Validation
+![Validations](https://github.com/user-attachments/assets/9bff7d6c-e29d-41a7-bc8a-f2a2dc7b35b4)
