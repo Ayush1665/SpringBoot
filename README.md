@@ -75,13 +75,13 @@ mvn spring-boot:run
 
 ##  Preview
 
-##### Home Page
+##### Create Employee
 ![](https://github.com/user-attachments/assets/73f9995b-f98c-44a3-8ca8-a46109f118f5)
 
 ##### Update Employee Details
 ![Update Employee Detail](https://github.com/user-attachments/assets/b2a6b146-d9be-4944-bd38-0ad0914d52ae)
 
-##### Create Employee
+##### Home Page
 ![Update Employee Detail](https://github.com/user-attachments/assets/8dd45e9b-cbc6-4252-8515-90f5098bdb7b)
 
 ##### Validation
