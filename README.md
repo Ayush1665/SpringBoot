@@ -5,7 +5,6 @@ A backend application built using **Spring Boot**, **Spring MVC**, **Spring Data
 This project follows clean layered architecture and implements dynamic query building, pagination, sorting, logging, and Spring Security configuration.
 
 ##  Technologies Used
-
 * **Backend:** Spring Boot, Spring MVC
 * **ORM:** Spring Data JPA (Hibernate)
 * **Dynamic Queries:** CriteriaBuilder & CriteriaQuery
@@ -75,14 +74,17 @@ mvn spring-boot:run
 
 ##  Preview
 
+##### ER Diagram
+![WhatsApp Image 2026-03-31 at 10 09 25 PM](https://github.com/user-attachments/assets/44fafe83-c168-4ae7-a5db-2e1733b063f4)
+
 ##### Create Employee
 ![](https://github.com/user-attachments/assets/73f9995b-f98c-44a3-8ca8-a46109f118f5)
 
 ##### Update Employee Details
 ![Update Employee Detail](https://github.com/user-attachments/assets/b2a6b146-d9be-4944-bd38-0ad0914d52ae)
 
-##### Home Page
-![Update Employee Detail](https://github.com/user-attachments/assets/8dd45e9b-cbc6-4252-8515-90f5098bdb7b)
-
 ##### Validation
 ![Validations](https://github.com/user-attachments/assets/9bff7d6c-e29d-41a7-bc8a-f2a2dc7b35b4)
+
+##### Jacoco (Java Code Coverage)
+![WhatsApp Image 2026-03-31 at 10 04 17 PM](https://github.com/user-attachments/assets/e4834bc8-c6b2-4f1e-a93a-bb20e70511e7)
