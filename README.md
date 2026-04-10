@@ -86,5 +86,8 @@ mvn spring-boot:run
 ##### Validation
 ![Validations](https://github.com/user-attachments/assets/9bff7d6c-e29d-41a7-bc8a-f2a2dc7b35b4)
 
+##### Swagger Integration
+<img width="1347" height="597" alt="Screenshot 2026-04-10 113913" src="https://github.com/user-attachments/assets/7f526859-d873-43aa-b784-8349de2693f6" />
+
 ##### Jacoco (Java Code Coverage)
 ![WhatsApp Image 2026-03-31 at 10 04 17 PM](https://github.com/user-attachments/assets/e4834bc8-c6b2-4f1e-a93a-bb20e70511e7)
